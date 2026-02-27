@@ -1,0 +1,348 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Gender Selection Styles */
+.gender-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.gender-box {
+  flex: 1;
+  max-width: 150px;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gender-box:hover {
+  border-color: #646cff;
+  transform: translateY(-2px);
+  background-color: rgba(100, 108, 255, 0.1);
+}
+
+.gender-box.selected {
+  border-color: #646cff;
+  background-color: rgba(100, 108, 255, 0.2);
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.3);
+}
+
+.gender-icon {
+  font-size: 2rem;
+}
+
+.gender-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Removing Light Mode Overrides for Gender Selection */
+
+/* Form Layout Styles */
+.form-container {
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #111;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(100, 108, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.value-display,
+.value-input {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(100, 108, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #646cff;
+  border: 1px solid rgba(100, 108, 255, 0.3);
+  text-align: center;
+}
+
+.value-input {
+  width: 70px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.value-input:focus {
+  background: rgba(100, 108, 255, 0.3);
+  border-color: #646cff;
+  box-shadow: 0 0 10px rgba(100, 108, 255, 0.2);
+}
+
+/* Hide spin buttons for Chrome, Safari, Edge, Opera */
+.value-input::-webkit-outer-spin-button,
+.value-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spin buttons for Firefox */
+.value-input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Slider Styles */
+.custom-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.custom-slider:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #646cff;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(100, 108, 255, 0.5);
+  transition: transform 0.2s;
+}
+
+/* BMI Calculator Styles */
+.calculator-toggle {
+  font-size: 0.85rem;
+  color: #646cff;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  margin-top: 8px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+}
+
+.calculator-toggle:hover {
+  opacity: 1;
+}
+
+.bmi-calculator-area {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.calc-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calc-label {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.calc-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  outline: none;
+  width: 100%;
+}
+
+.calc-input:focus {
+  border-color: #646cff;
+}
+
+.calc-btn {
+  background: #646cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calc-btn:hover {
+  background: #535bf2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #646cff;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 10px rgba(100, 108, 255, 0.5);
+}
+
+/* Binary/Categorical Grid */
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.small-box {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* Removing Light Mode Overrides for Form Grid */
